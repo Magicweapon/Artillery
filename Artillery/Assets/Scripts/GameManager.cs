@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager SingletonGameManager;
-    public static int cannonballSpeed;
-    public static int shootsPerGame;
-    public static float rotationSpeed;
+    public static int cannonballSpeed = 40;
+    public static int shootsPerGame = 5;
+    public static float rotationSpeed = 0.6f;
     
     private void Awake()
     {
