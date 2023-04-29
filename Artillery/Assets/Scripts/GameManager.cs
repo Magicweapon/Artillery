@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager SingletonGameManager;
     public static int cannonballSpeed = 40;
-    public static int shootsPerGame = 5;
+    private static int shootsPerGame = 10;
     public static float rotationSpeed = 0.6f;
     
     private void Awake()
@@ -18,6 +18,18 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("Ya existe una instancia de esta clase");
+        }
+    }
+
+    public static int ShootsPerGame
+    {
+        get
+        {
+            return shootsPerGame;
+        }
+        set
+        {
+            shootsPerGame = value;
         }
     }
 }

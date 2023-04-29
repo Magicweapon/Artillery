@@ -27,12 +27,15 @@ public class Cannon : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject cannonball = Instantiate(CannonballPrefab, cannonTip.transform.position, cannonTip.transform.rotation);
-            Rigidbody rigidbody = cannonball.GetComponent<Rigidbody>();
-            Vector3 shotDirection = transform.rotation.eulerAngles;
-            rigidbody.velocity = shotDirection.normalized * GameManager.cannonballSpeed;
-            Debug.Log(shotDirection);
-
+            if (GameManager.ShootsPerGame > 0)
+            {
+                GameObject cannonball = Instantiate(CannonballPrefab, cannonTip.transform.position, cannonTip.transform.rotation);
+                Rigidbody rigidbody = cannonball.GetComponent<Rigidbody>();
+                Vector3 shotDirection = transform.rotation.eulerAngles;
+                shotDirection.y = 90 - shotDirection.x;
+                rigidbody.velocity = shotDirection.normalized * GameManager.cannonballSpeed;
+                GameManager.ShootsPerGame--;
+            }
         }
     }
 }
