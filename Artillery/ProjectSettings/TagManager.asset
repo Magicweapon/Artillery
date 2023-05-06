@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CannonBall
+  - Ground
+  - Obstacle
+  - Core
   layers:
   - Default
   - TransparentFX

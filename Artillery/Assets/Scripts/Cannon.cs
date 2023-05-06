@@ -25,16 +25,18 @@ public class Cannon : MonoBehaviour
         if (rotation > 90) rotation = 90;
         if (rotation < 0) rotation = 0;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !GameManager.Blocked)
         {
             if (GameManager.ShootsPerGame > 0)
             {
                 GameObject cannonball = Instantiate(CannonballPrefab, cannonTip.transform.position, cannonTip.transform.rotation);
                 Rigidbody rigidbody = cannonball.GetComponent<Rigidbody>();
+                FollowCamera.target = cannonball;
                 Vector3 shotDirection = transform.rotation.eulerAngles;
                 shotDirection.y = 90 - shotDirection.x;
                 rigidbody.velocity = shotDirection.normalized * GameManager.cannonballSpeed;
                 GameManager.ShootsPerGame--;
+                GameManager.Blocked = true;
             }
         }
     }

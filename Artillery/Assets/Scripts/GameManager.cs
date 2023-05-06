@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public static bool Blocked;
     public static GameManager SingletonGameManager;
     public static int cannonballSpeed = 40;
     private static int shootsPerGame = 15;
