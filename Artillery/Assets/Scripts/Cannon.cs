@@ -15,6 +15,8 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Blocked) return;
+
         rotation += Input.GetAxis("Horizontal") * GameManager.rotationSpeed;
 
         if (rotation <= 90 && rotation >= 0)
@@ -25,7 +27,7 @@ public class Cannon : MonoBehaviour
         if (rotation > 90) rotation = 90;
         if (rotation < 0) rotation = 0;
 
-        if (Input.GetButtonDown("Fire1") && !GameManager.Blocked)
+        if (Input.GetButtonDown("Fire1"))
         {
             if (GameManager.ShootsPerGame > 0)
             {

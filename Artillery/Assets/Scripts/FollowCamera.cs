@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FollowCamera : MonoBehaviour
 {
     public static GameObject target;
+    public UnityEvent TargetNulled;
 
     [Header("Configurar en el editor")]
     public float smoothing;
@@ -34,6 +36,7 @@ public class FollowCamera : MonoBehaviour
                 if (sleeping)
                 {
                     target = null;
+                    TargetNulled.Invoke();
                     //goal = new Vector3(-20.0f, -10.0f, 0.0f);
                     GameManager.Blocked = false;
                     return;

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18766678}
   - component: {fileID: 18766677}
+  - component: {fileID: 18766679}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
@@ -159,7 +160,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8c895f029278feb4499e3ff246534ed3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,21 +192,30 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.09867859
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.39473367
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 1}
+      key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -213,7 +223,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -252,6 +262,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18766679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18766676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef250313343b6e4a84a48f7f639945c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistanceBetweenPoints: 0.2
 --- !u!1 &262891290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2064,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdc4ceb2fa9d7d449905776acafe06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetNulled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 18766679}
+        m_TargetAssemblyTypeName: Trail, Assembly-CSharp
+        m_MethodName: SetNullTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   smoothing: 0.05
   XYLimit: {x: -20, y: -10}
   camZ: 0
