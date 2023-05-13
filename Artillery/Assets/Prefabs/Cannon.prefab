@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CannonballPrefab: {fileID: 6862580652719571695, guid: 99bc89c23178fcd4e8d0bbf2060daf75, type: 3}
+  ShotParticles: {fileID: 7238959684319137339, guid: 92797d58b646fbd45bc3f2606c466d34, type: 3}
 --- !u!1 &8106619563169613615
 GameObject:
   m_ObjectHideFlags: 0

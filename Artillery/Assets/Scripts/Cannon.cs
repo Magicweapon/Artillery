@@ -6,6 +6,7 @@ public class Cannon : MonoBehaviour
 {
     [SerializeField] private GameObject CannonballPrefab;
     private GameObject cannonTip;
+    public GameObject ShotParticles;
     private float rotation;
 
     private void Start()
@@ -36,6 +37,8 @@ public class Cannon : MonoBehaviour
                 FollowCamera.target = cannonball;
                 Vector3 shotDirection = transform.rotation.eulerAngles;
                 shotDirection.y = 90 - shotDirection.x;
+                Vector3 particlesDirection = new Vector3(-90 + shotDirection.x, 90, 0);
+                GameObject particles = Instantiate(ShotParticles, cannonTip.transform.position, Quaternion.Euler(particlesDirection), transform);
                 rigidbody.velocity = shotDirection.normalized * GameManager.cannonballSpeed;
                 GameManager.ShootsPerGame--;
                 GameManager.Blocked = true;
