@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager SingletonGameManager;
     public static int cannonballSpeed = 40;
     private static int shootsPerGame = 15;
-    public static float rotationSpeed = 0.6f;
+    public static float rotationSpeed = 0.5f;
     
     private void Awake()
     {

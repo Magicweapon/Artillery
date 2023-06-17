@@ -9,9 +9,14 @@ public class Cannon : MonoBehaviour
     public GameObject ShotParticles;
     private float rotation;
 
+    private GameObject shotSound;
+    private AudioSource shotSource;
+
     private void Start()
     {
         cannonTip = transform.Find("Cannon Tip").gameObject;
+        shotSound = GameObject.Find("Gunshot Sound");
+        shotSource = shotSound.GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -41,6 +46,7 @@ public class Cannon : MonoBehaviour
                 GameObject particles = Instantiate(ShotParticles, cannonTip.transform.position, Quaternion.Euler(particlesDirection), transform);
                 rigidbody.velocity = shotDirection.normalized * GameManager.cannonballSpeed;
                 GameManager.ShootsPerGame--;
+                shotSource.Play();
                 GameManager.Blocked = true;
             }
         }
