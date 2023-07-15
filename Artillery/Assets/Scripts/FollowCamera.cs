@@ -25,19 +25,19 @@ public class FollowCamera : MonoBehaviour
 
         if (target == null)
         {
-            goal = new Vector3(-20.0f, -10.0f, 0.0f);
+            goal = new Vector3(-30.0f, -7.0f, 0.0f);
         }
         else
         {
             goal = target.transform.position;
-            if (target.tag == "CannonBall")
+            if (target.tag == "Cannonball")
             {
                 bool sleeping = target.GetComponent<Rigidbody>().IsSleeping();
                 if (sleeping)
                 {
                     target = null;
                     TargetNulled.Invoke();
-                    //goal = new Vector3(-20.0f, -10.0f, 0.0f);
+                    //goal = new Vector3(-30.0f, -10.0f, 0.0f);
                     GameManager.Blocked = false;
                     return;
                 }

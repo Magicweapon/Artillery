@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Cannonball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject explosionParticles;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "Ground")
+        {
+            Invoke("Explode", 3);
+        }
+        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Core") Explode();
+    }
+    public void Explode()
+    {
+        GameObject particles = Instantiate(explosionParticles, transform.position, Quaternion.identity) as GameObject;
+        GameManager.Blocked = false;
+        FollowCamera.target = null;
+        Destroy(this.gameObject);
     }
 }

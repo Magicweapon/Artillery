@@ -23,7 +23,7 @@ public class Trail : MonoBehaviour
         {
             if (FollowCamera.target != null)
             {
-                if (FollowCamera.target.tag == "CannonBall")
+                if (FollowCamera.target.tag == "Cannonball")
                 {
                     lineTarget = FollowCamera.target;
                 }

@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CannonBall
   - Ground
   - Obstacle
   - Core
+  - Explotion
+  - Cannonball
   layers:
   - Default
   - TransparentFX

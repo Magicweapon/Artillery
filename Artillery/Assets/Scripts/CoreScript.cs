@@ -6,10 +6,11 @@ using UnityEngine.Events;
 public class CoreScript : MonoBehaviour
 {
     public UnityEvent CoreReached;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "CannonBall")
+        if (other.tag == "Explotion")
         {
+            Destroy(gameObject);
             CoreReached.Invoke();
         }
     }
