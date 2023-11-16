@@ -42,6 +42,7 @@ public class Cannon : MonoBehaviour
         modifyForce.Enable();
 
         shoot.performed += Shoot;
+        modifyForce.performed += Test;
     }
     void Update()
     {
@@ -79,6 +80,10 @@ public class Cannon : MonoBehaviour
         GameManager.ShootsPerGame--;
         shotSource.Play();
         GameManager.Blocked = true;
-        Debug.Log(GameManager.cannonballSpeed);
+    }
+
+    private void Test(InputAction.CallbackContext context)
+    {
+        Debug.Log("Soy Puto");
     }
 }

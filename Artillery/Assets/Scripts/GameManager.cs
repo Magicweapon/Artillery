@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static bool Blocked;
     public static GameManager SingletonGameManager;
     public static float cannonballSpeed = 40f;
-    private static int shootsPerGame = 15;
+    private static int shootsPerGame = 0;
     public static float rotationSpeed = 0.25f;
 
     public GameObject WinCanvas;
